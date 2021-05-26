@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} Editar Funcionario {% endblock %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <br>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </form>
+{% endblock %}

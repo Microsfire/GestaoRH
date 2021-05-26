@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Excluir Deparatamento {% endblock %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>O Departamento {{ obj }} sera Excluido deseja continuar</h1>
+        {{ form }}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+
+{% endblock%}

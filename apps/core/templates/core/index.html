@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title%} mcod Site {% endblock %}
+{% block title%} System gestão RH {% endblock %}
 
 {% block main %}
 
@@ -8,6 +8,7 @@
     <div class="col-sm">
       Olá {{ usuario.funcionario.nome}}
         <a href="{% url 'list_funcionarios' %}">Gerenciar funcionarios</a>
+        <a href="{% url 'list_deparatamentos' %}">Gerenciar Departamentos</a>
     </div>
     <div class="col-sm">
       two

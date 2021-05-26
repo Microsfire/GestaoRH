@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Deletar Funcionario {% endblock %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>O Funcionario {{ obj }} sera Excluido deseja continuar</h1>
+        {{ form.as_p}}
+
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+        <br>
+        <a href="{% url 'list_funcionarios' %}" class="btn btn-primary">Cancelar</a>
+{% endblock %}

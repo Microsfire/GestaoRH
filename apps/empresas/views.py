@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import CreateView, UpdateView
-from .models import Empresa
 from django.http import HttpResponse
+from django.views.generic import CreateView, UpdateView
+
+from .models import Empresa
+
 
 class EmpresaCreate(CreateView):
     model = Empresa
@@ -13,6 +14,7 @@ class EmpresaCreate(CreateView):
         funcionario.empresa = obj
         funcionario.save()
         return HttpResponse('ok')
+
 
 class EmpresaEdit(UpdateView):
     model = Empresa

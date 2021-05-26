@@ -30,6 +30,9 @@ urlpatterns = [
     #apps.empresa
     path('empresa/', include('apps.empresas.urls')),
 
+    #apps.departamentos
+    path('departamentos/', include('apps.departamentos.urls')),
+
     #admin
     path('admin/', admin.site.urls),
 ]
