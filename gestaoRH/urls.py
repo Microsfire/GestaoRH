@@ -15,26 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
-    #apps.core
+    # apps.core
     path('', include('apps.core.urls')),
 
-    #apps.funcionarios
+    # apps.funcionarios
     path('funcionarios/', include('apps.funcionarios.urls')),
 
-    #login
+    # login
     path('accounts/', include('django.contrib.auth.urls')),
 
-    #apps.empresa
+    # apps.empresa
     path('empresa/', include('apps.empresas.urls')),
 
-    #apps.departamentos
+    # apps.departamentos
     path('departamentos/', include('apps.departamentos.urls')),
+
+    # apps.documentos
+    path('documento/', include('apps.documentos.urls')),
 
     #admin
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
