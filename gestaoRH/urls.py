@@ -38,6 +38,9 @@ urlpatterns = [
     # apps.documentos
     path('documento/', include('apps.documentos.urls')),
 
+    # apps.horas_extras
+    path('horas-extras/', include('apps.registro_hora_extra.urls')),
+
     #admin
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

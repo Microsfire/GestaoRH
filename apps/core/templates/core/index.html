@@ -6,9 +6,10 @@
 
     <div class="row">
     <div class="col-sm">
-      Olá {{ usuario.funcionario.nome}}
-        <a href="{% url 'list_funcionarios' %}">Gerenciar funcionarios</a>
-        <a href="{% url 'list_deparatamentos' %}">Gerenciar Departamentos</a>
+      Olá {{ usuario.funcionario.nome}}<br>
+        <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a><br>
+        <a href="{% url 'list_deparatamentos' %}">Gerenciar Departamentos</a><br>
+        <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de horas</a>
 
 
     </div>
