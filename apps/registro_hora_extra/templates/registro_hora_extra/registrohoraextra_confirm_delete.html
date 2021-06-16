@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Deletar Funcionario {% endblock %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <h1>Deseja excluir as horas extras de {{ object.funcionario.nome }} referente {{object}}</h1>
+        {{ form.as_p}}
+
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+        <br>
+        <a href="{% url 'list_hora_extra' %}" class="btn btn-primary">Cancelar</a>
+{% endblock %}
