@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['gestaoRh-venv.eba-qppabqhc.sa-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-env.eba-7wicgp3p.us-west-2.elasticbeanstalk.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
