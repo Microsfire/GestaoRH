@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['env-gestaoRH.eba-rnpqqpxr.us-west-2.elasticbeanstalk.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -93,6 +93,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 #arquivos staticos
 STATICFILES_DIRS = [
