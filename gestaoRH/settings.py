@@ -93,11 +93,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = '/home/mcs/mcsDev/gestaoRh/file_static'
 
 #arquivos staticos
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+
 ]
 # arquivos enviados pelo usuario
 MEDIA_ROOT = "media"
