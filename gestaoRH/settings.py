@@ -99,7 +99,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 # Config nginx
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "assets/")
 
 # arquivos enviados pelo usuario
 MEDIA_ROOT = "media"
