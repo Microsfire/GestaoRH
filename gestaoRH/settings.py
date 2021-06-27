@@ -98,8 +98,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-# Config nginx
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/admin')
 
 # arquivos enviados pelo usuario
 MEDIA_ROOT = "media"
