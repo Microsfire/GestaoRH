@@ -7,7 +7,8 @@ SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.94.34.11']
+#ALLOWED_HOSTS = ['54.94.34.11']
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -96,10 +97,11 @@ STATIC_URL = '/static/'
 
 #arquivos staticos
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "staticfiles",
 ]
-# Config nginx
-#STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+#Config nginx
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # arquivos enviados pelo usuario
 MEDIA_ROOT = "media"

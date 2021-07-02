@@ -6,7 +6,7 @@
     {% for registro_hora_extra in object_list %}
         {{ registro_hora_extra }}
 
-        <a href="{% url 'update_hora_extra' registro_hora_extra.id %}" >
+        <a href="{% url 'update_hora_extra_base' registro_hora_extra.id %}" >
             Editar
         </a>
 
