@@ -8,5 +8,10 @@
         <a href="{% url 'delete_funcionario' funcionario.id %}">Deletar</a><br>
 
     {% endfor %}
-        <a href="{% url 'create_funcionario' %}" class="btn btn-info">Novo</a><br>
+        <a href="{% url 'create_funcionario' %}" class="btn btn-info">
+            Novo
+        </a>
+        <a href="{% url 'relatorio_funcionario' %}" class="btn btn-secondary">
+            Gerar PDF ReportLab
+        </a>
 {% endblock %}

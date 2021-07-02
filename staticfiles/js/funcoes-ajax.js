@@ -11,6 +11,7 @@ function utilizouHoraExtra(id){
         success: function(result){
             console.log('sucesso!!!!');
             $("#mensagem").text(result.mensagem);
+            $("#horas-atualizadas").text(result.horas);
         }
     });
 

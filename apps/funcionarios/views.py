@@ -7,6 +7,9 @@ from django.views.generic import (
     CreateView
 )
 from .models import Funcionario
+import io
+from django.http import FileResponse, HttpResponse
+from reportlab.pdfgen import canvas
 
 class FuncionarioList(ListView):
     model = Funcionario
@@ -39,3 +42,33 @@ class FuncionarioNovo(CreateView):
         return super(FuncionarioNovo, self).form_valid(form)
 
 
+def relatorio_funcionario(request):
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="mypdf.pdf"'
+
+    buffer = io.BytesIO()
+    p = canvas.Canvas(buffer)
+
+    p.drawString(200, 810, 'Relatorio de Funcionarios')
+
+    funcionarios = Funcionario.objects.filter(
+        empresa=request.user.funcionario.empresa
+    )
+    str_ = 'nome: %s | Hora Extra: %.2f'
+    p.drawString(0, 800, '_' * 100)
+
+    y = 750
+    for funcionario in funcionarios:
+        p.drawString(10, y, str_ % (
+            funcionario.nome, funcionario.total_hora_extra
+        ))
+        y-=20
+
+    p.showPage()
+    p.save()
+
+    pdf = buffer.getvalue()
+    buffer.close()
+    response.write(pdf)
+
+    return response

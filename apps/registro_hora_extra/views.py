@@ -58,8 +58,16 @@ class HoraExtraCreate(CreateView):
 #Teste jquery
 class UtilizouHoraExtra(View):
     def post(self, *args, **kwargs):
+        registro_hora_extra = RegistroHoraExtra.objects.get(id=kwargs['pk'])
+        registro_hora_extra.utilzada = True
+        registro_hora_extra.save()
+        empregado = self.request.user.funcionario
+
         response = json.dumps(
-            {'mensagem': 'requisicao executada'}
+            {
+                'mensagem': 'requisicao executada',
+                'horas': float(empregado.total_hora_extra)
+            }
         )
         return HttpResponse(response, content_type='application/json')
 
