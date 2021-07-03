@@ -19,4 +19,6 @@
     <h3>Não existe Registro de horas no banco de dados</h3>
     {% endif %}
     <a href="{% url 'create_hora_extra' %}" class="btn btn-primary">Novo</a>
+    <a href="{% url 'exportar_csv' %}" class="btn btn-warning">Esportar CSV</a>
+    <a href="{% url 'exportar_excel' %}" class="btn btn-outline-danger">Esportar EXCEL</a>
 {% endblock %}

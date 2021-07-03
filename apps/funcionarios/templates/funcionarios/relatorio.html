@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{% block cssRelatorio %}
+<style>
+    .title{
+        color: blue;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<h1 class="title">Relatorio funcionario</h1>
+<h2>{{ sales }}</h2>
+
+<a href="{% url 'relatorio_funcionario_html' %}" class="btn btn-dark">
+    PDF Html
+</a>
+{% endblock %}
