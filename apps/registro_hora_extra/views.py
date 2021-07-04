@@ -93,7 +93,7 @@ class ExportarParaCsv(View):
 class ExportarExcel(View):
     def get(self, request):
         response = HttpResponse(content_type='application/ms-excel')
-        response['Content-Disposition'] = 'attachment; filename="Relatorio.xls"'
+        response['Content-Disposition'] = 'attachment; filename=."Relatorio.xls"'
 
         wb = xlwt.Workbook(encoding='UTF-8')
         ws = wb.add_sheet('banco de horas')
