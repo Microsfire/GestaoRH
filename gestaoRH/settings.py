@@ -9,6 +9,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['54.94.34.11']
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -16,17 +17,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'bootstrapform',
+
     'rest_framework',
+    'rest_framework.authtoken',
+
     'apps.empresas',
     'apps.funcionarios',
     'apps.departamentos',
     'apps.documentos',
     'apps.registro_hora_extra',
     'apps.core',
-    'bootstrapform',
+
 
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
