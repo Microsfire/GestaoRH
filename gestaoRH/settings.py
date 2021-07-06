@@ -7,6 +7,7 @@ SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52
 
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['54.94.34.11']
 
 
@@ -22,6 +23,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework.authtoken',
+
+    'django_celery_results',
 
     'apps.empresas',
     'apps.funcionarios',
@@ -123,3 +126,10 @@ LOGOUT_REDIRECT_URL = 'login'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Celery
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_BROCKER_URL = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
