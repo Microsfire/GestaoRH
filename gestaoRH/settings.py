@@ -8,7 +8,8 @@ SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['54.94.34.11']
+#ALLOWED_HOSTS = ['54.94.34.11']
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -129,9 +130,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Celery
 CELERY_RESULT_BACKEND = 'django-db'
-#CELERY_RESULT_BACKEND = 'django-cache'pip install Celery redis
 
 CELERY_BROCKER_URL = 'redis://localhost:6379/'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
+
+
+#gmail_send/settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mcode.dev7@gmail.com'
+EMAIL_HOST_PASSWORD = 'znjxcaonimxtwtyq'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'default from email'
+
