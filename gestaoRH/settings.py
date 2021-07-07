@@ -8,7 +8,8 @@ SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['54.94.34.11']
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['54.94.34.11']
 
 
 INSTALLED_APPS = [
@@ -141,7 +142,7 @@ CELERY_TASK_SERIALIZER = 'json'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'mcode.dev7@gmail.com'
-EMAIL_HOST_PASSWORD = 'znjxcaonimxtwtyq'
+EMAIL_HOST_PASSWORD = 'unswfisqzskfgzsj'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'default from email'
