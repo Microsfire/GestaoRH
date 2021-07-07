@@ -5,6 +5,6 @@ gestaoRH/__pycache__/
 __pycache__
 static
 media
-
+celerybeat-schedule.db
 
 
