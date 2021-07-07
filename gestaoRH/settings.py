@@ -8,7 +8,8 @@ SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['54.94.34.11']
+#ALLOWED_HOSTS = ['54.94.34.11']
+ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
@@ -25,6 +26,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 
     'django_celery_results',
+    'django_celery_beat',
 
     'apps.empresas',
     'apps.funcionarios',
