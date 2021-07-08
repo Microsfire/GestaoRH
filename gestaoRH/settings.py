@@ -9,7 +9,12 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['54.94.34.11']
+
+ALLOWED_HOSTS = [
+    '54.94.34.11',
+    'localhost',
+    'grh.mcs.dev.br'
+]
 
 
 INSTALLED_APPS = [
