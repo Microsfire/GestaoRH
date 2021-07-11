@@ -1,20 +1,15 @@
 import os.path
 from pathlib import Path
+from decouple import config, Csv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-q6v_6g(s)ddgqz$3#sjar391)3)hgp8uza2y0him(k8&x_r#52'
+SECRET_KEY = config('SECRET_KEY')
 
-DEBUG = True
-
-
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 
-ALLOWED_HOSTS = [
-    '54.94.34.11',
-    'localhost',
-    'grh.mcs.dev.br'
-]
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
 
 INSTALLED_APPS = [
@@ -76,6 +71,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+
+    'antigo': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'dbantigo.sqlite3',
     }
 }
 
@@ -151,4 +151,7 @@ EMAIL_HOST_PASSWORD = 'unswfisqzskfgzsj'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'default from email'
+
+# Multiplos banco de dados
+
 
