@@ -8,8 +8,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
+
+
 
 
 INSTALLED_APPS = [
@@ -144,14 +145,13 @@ CELERY_TASK_SERIALIZER = 'json'
 
 
 #gmail_send/settings.py
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mcode.dev7@gmail.com'
-EMAIL_HOST_PASSWORD = 'unswfisqzskfgzsj'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'default from email'
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
-# Multiplos banco de dados
 
 
