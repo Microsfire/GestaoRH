@@ -10,9 +10,6 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
-
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -35,7 +32,7 @@ INSTALLED_APPS = [
     'apps.documentos',
     'apps.registro_hora_extra',
     'apps.core',
-
+    'apps.app_antiga',
 
 ]
 MIDDLEWARE = [
@@ -105,37 +102,35 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
-#arquivos staticos
+# arquivos staticos
 STATICFILES_DIRS = [
     BASE_DIR / "staticfiles",
 ]
 
-#Config nginx
+# Config nginx
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # arquivos enviados pelo usuario
 MEDIA_ROOT = "media"
 MEDIA_URL = '/media/'
 
-#login
+# login
 LOGIN_REDIRECT_URL = 'home'
 
-#logout
+# logout
 LOGOUT_REDIRECT_URL = 'login'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#Celery
+# Celery
 CELERY_RESULT_BACKEND = 'django-db'
 
 CELERY_BROCKER_URL = 'redis://localhost:6379/'
@@ -143,8 +138,7 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 
-
-#gmail_send/settings.py
+# gmail_send/settings.py
 EMAIL_BACKEND = config('EMAIL_BACKEND')
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
@@ -153,5 +147,5 @@ EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
-
-
+# Routers
+DATABASE_ROUTERS = ['gestaoRH.DBRouters.DBRouters']
